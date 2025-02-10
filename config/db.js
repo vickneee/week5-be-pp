@@ -1,3 +1,4 @@
+// Mongoose connection to MongoDB database using environment variable MONGO_URI inside .env
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
@@ -9,5 +10,5 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
- 
+
 module.exports = connectDB;
