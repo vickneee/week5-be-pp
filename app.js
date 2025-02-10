@@ -6,6 +6,7 @@ const { unknownEndpoint } = require("./middleware/customMiddleware");
 const connectDB = require("./config/db"); 
 const morgan = require("morgan");
 app.use(morgan("dev"));
+require('dotenv').config();
 
 connectDB();
 
