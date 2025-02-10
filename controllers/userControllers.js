@@ -44,7 +44,7 @@ const getUserById = async (req, res) => {
 };
 
 // PUT /users/:userId
-const updateUser = async (req, res) => {
+ const updateUser = async (req, res) => {
   const { userId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(userId)) {
@@ -66,6 +66,30 @@ const updateUser = async (req, res) => {
     res.status(500).json({ message: "Failed to update user" });
   }
 };
+
+//PATCH
+// const updateUser = async (req, res) => {
+//   const { userId } = req.params;
+
+//   if (!mongoose.Types.ObjectId.isValid(userId)) {
+//     return res.status(400).json({ message: "Invalid User ID" });
+//   }
+
+//   try {
+//     const updatedUser = await User.findOneAndReplace(
+//       { _id: userId },
+//       { ...req.body },
+//       { new: true }
+//     );
+//     if (updatedUser) {
+//       res.status(200).json(updatedUser);
+//     } else {
+//       res.status(404).json({ message: "User not found" });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ message: "Failed to update user" });
+//   }
+// };
 
 // DELETE /users/:userId
 const deleteUser = async (req, res) => {
